@@ -157,7 +157,9 @@ const HomePage = () => {
                     className="game-button-outline"
                     aria-label="Learn more about Ornitho"
                   >
-                    Learn More
+                    <Link className="w-full h-full" href="/projects/ornitho">
+                      Learn More
+                    </Link>
                     <span className="ml-2">→</span>
                   </motion.button>
                 </div>
