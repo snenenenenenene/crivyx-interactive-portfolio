@@ -2,20 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --navigation-height: 5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .social-link {
+    @apply p-2 border border-primary-gray/60 rounded-full 
+           text-primary-white hover:border-primary-red hover:text-primary-red 
+           transition-all duration-300;
+  }
+
+  .game-button {
+    @apply px-6 py-3 bg-primary-white text-primary-black 
+           border border-primary-white font-mono
+           hover:bg-primary-red hover:text-primary-white hover:border-primary-red 
+           transition-all duration-300 flex items-center;
+  }
+
+  .game-button-outline {
+    @apply px-6 py-3 border border-primary-white text-primary-white font-mono
+           hover:bg-primary-red hover:border-primary-red 
+           transition-all duration-300 flex items-center;
+  }
+}
+
+.vhs-scanlines {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.5) 51%
+  );
+  background-size: 100% 4px;
+  animation: scanlines 0.2s linear infinite;
+}
+
+.vhs-noise {
+  background: url('/noise.png');
+  animation: noise 1s infinite alternate;
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes noise {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(1px, 1px); }
 }

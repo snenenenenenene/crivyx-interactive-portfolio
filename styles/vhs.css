@@ -1,0 +1,89 @@
+/* styles/vhs.css */
+.vhs-effect {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 40;
+  }
+  
+  .vhs-scanlines {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+	  to bottom,
+	  transparent 50%,
+	  rgba(0, 0, 0, 0.5) 51%
+	);
+	background-size: 100% 4px;
+	animation: scanlines 0.2s linear infinite;
+  }
+  
+  .vhs-noise {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.08;
+	background: url('/noise.png');
+	animation: noise 1s infinite alternate;
+  }
+  
+  @keyframes scanlines {
+	0% {
+	  transform: translateY(0);
+	}
+	100% {
+	  transform: translateY(4px);
+	}
+  }
+  
+  @keyframes noise {
+	0% { transform: translate(0, 0); }
+	100% { transform: translate(1px, 1px); }
+  }
+  
+  /* app/globals.css */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+  @layer components {
+	.social-link {
+	  @apply p-2 border border-gray-600 rounded-full hover:border-red-600 
+			 hover:text-red-600 transition-colors;
+	}
+  
+	.game-button {
+	  @apply px-6 py-3 bg-white text-black border border-white 
+			 hover:bg-red-600 hover:text-white hover:border-red-600 
+			 transition-all duration-300 font-mono;
+	}
+  
+	.game-button-outline {
+	  @apply px-6 py-3 border border-white text-white 
+			 hover:bg-red-600 hover:border-red-600 
+			 transition-all duration-300 font-mono;
+	}
+  }
+  
+  @keyframes fade-in-up {
+	from {
+	  opacity: 0;
+	  transform: translateY(1rem);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  .animate-fade-in-up {
+	animation: fade-in-up 0.3s ease-out;
+  }

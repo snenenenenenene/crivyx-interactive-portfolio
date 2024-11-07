@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,8 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          black: '#000000',
+          gray: '#8f8f8f',
+          darkgray: '#161614',
+          red: '#ff0000',
+          white: '#ffffff',
+        },
+      },
+      backgroundColor: {
+        'black-transparent': 'rgba(0, 0, 0, 0)',
       },
     },
   },
