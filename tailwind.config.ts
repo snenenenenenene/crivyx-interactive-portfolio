@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        radlush: ["Radlush"]
+      },
       colors: {
         primary: {
           black: '#000000',

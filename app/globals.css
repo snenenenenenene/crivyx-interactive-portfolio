@@ -8,6 +8,11 @@
   }
 }
 
+@font-face {
+  font-family: 'Radlush';
+  src: url("/fonts/radlush/Radlush.ttf");
+}
+
 @layer components {
   .social-link {
     @apply p-2 border border-primary-gray/60 rounded-full 

@@ -1,11 +1,11 @@
 // app/page.tsx
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, Instagram, Youtube, Steam } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { X, Instagram, Youtube } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { VHSEffect } from '../components/VHSEffect';
 import { CookieConsent } from '../components/CookieConsent';
 import { getSocialMediaLinks } from '../lib/utils';
@@ -33,20 +33,26 @@ const HomePage = () => {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="w-full mx-auto px-6 h-20">
+        <div className="w-full mx-auto px-6 h-36">
           <div className="flex items-center justify-between h-full">
-            <div className="flex items-center space-x-6">
-              <Link href="/" aria-label="Navigate to homepage">
+            <div className="flex items-center h-full space-x-6">
+              <Link href="/" aria-label="Navigate to homepage" className="h-full flex items-center">
                 <Image
                   src="/logo.svg"
                   alt="Seresaurus Games Logo"
                   width={136}
                   height={96}
                   priority
-                  className="h-12 w-auto"
+                  className="h-full w-auto py-4"
                 />
               </Link>
-              <h1 className="hidden md:block font-bold text-2xl tracking-wider text-primary-white">
+              <h1
+                className="hidden md:flex items-center h-full font-radlush text-4xl tracking-wider text-primary-white"
+                style={{
+                  fontFamily: 'Radlush',
+                  fontWeight: 1000
+                }}
+              >
                 SERESAURUS GAMES
               </h1>
             </div>
@@ -107,8 +113,8 @@ const HomePage = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-20 p-6">
-        <div className="relative h-[calc(100vh-5rem-3rem)]">
+      <main className="pt-36 p-6">
+        <div className="relative h-[calc(100vh-9rem-3rem)]">
           {/* Video and VHS Effect */}
           <div className="relative w-full h-full">
             <video
@@ -132,7 +138,7 @@ const HomePage = () => {
                   ORNITHO
                 </h2>
                 <p className="text-primary-white text-lg sm:text-xl max-w-2xl">
-                  A new survival sandbox experience...
+                  In Ornitho, Antwerp&apos;s familiar landmarks have become hunting grounds where prehistoric terrors lurk in every shadow. Navigate this psychological horror nightmare alone or with survivors, where your sanity is as fragile as your life. Face intelligent dinosaurs that adapt to your tactics in this atmospheric survival experience.
                 </p>
 
                 <div className="flex flex-wrap gap-4 pt-4">
