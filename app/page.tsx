@@ -1,13 +1,13 @@
 // app/page.tsx
 'use client';
 
-import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Instagram, X, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, Instagram, Youtube } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { VHSEffect } from '../components/VHSEffect';
+import { useState } from 'react';
 import { CookieConsent } from '../components/CookieConsent';
+import { VHSEffect } from '../components/VHSEffect';
 import { getSocialMediaLinks } from '../lib/utils';
 
 const HomePage = () => {
@@ -39,7 +39,7 @@ const HomePage = () => {
               <Link href="/" aria-label="Navigate to homepage" className="h-full flex items-center">
                 <Image
                   src="/logo.svg"
-                  alt="Seresaurus Games Logo"
+                  alt="Coragyps Interactive Games Logo"
                   width={136}
                   height={96}
                   priority
@@ -53,7 +53,7 @@ const HomePage = () => {
                   fontWeight: 1000
                 }}
               >
-                SERESAURUS GAMES
+                CORAGYPS INTERACTIVE
               </h1>
             </div>
 

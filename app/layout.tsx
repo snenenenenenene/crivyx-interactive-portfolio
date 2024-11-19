@@ -4,8 +4,8 @@ import { Analytics } from '../components/Analytics';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Seresaurus Games - Indie Game Studio",
-  description: "We develop and publish finely-crafted survival sandbox games.",
+  title: "Coragyps Interactive - Indie Game Studio",
+  description: "We develop and publish finely-crafted horror games.",
 };
 
 export default function RootLayout({
