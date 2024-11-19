@@ -1,7 +1,6 @@
 // components/VHSEffect.tsx
 'use client';
 
-import { useEffect, useState } from 'react';
 
 export const VHSEffect = () => {
 	return (
