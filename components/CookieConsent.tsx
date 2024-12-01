@@ -1,6 +1,7 @@
+"use client"
 // components/CookieConsent.tsx
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { getCookie, setCookie } from '../lib/cookies';
 
 export const CookieConsent = () => {

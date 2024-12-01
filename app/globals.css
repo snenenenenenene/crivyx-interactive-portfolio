@@ -6,34 +6,62 @@
   :root {
     --navigation-height: 5rem;
   }
+
+  body {
+    @apply bg-brutal-white text-brutal-black;
+  }
 }
 
 @font-face {
-  font-family: 'Radlush';
+  font-family: "Radlush";
   src: url("/fonts/radlush/Radlush.ttf");
 }
 
 @layer components {
+  /* Social Media Links */
   .social-link {
-    @apply p-2 border border-primary-gray/60 rounded-full 
-           text-primary-white hover:border-primary-red hover:text-primary-red 
-           transition-all duration-300;
+    @apply p-2 border-2 border-brutal-black 
+           bg-brutal-white text-brutal-black 
+           hover:bg-brutal-red hover:text-brutal-white 
+           transition-colors shadow-brutal;
   }
 
+  /* Game Buttons */
   .game-button {
-    @apply px-6 py-3 bg-primary-white text-primary-black 
-           border border-primary-white font-mono
-           hover:bg-primary-red hover:text-primary-white hover:border-primary-red 
-           transition-all duration-300 flex items-center;
+    @apply px-6 py-3 bg-brutal-black text-brutal-white 
+           border-2 border-brutal-black font-mono
+           hover:bg-brutal-red hover:border-brutal-red 
+           transition-colors shadow-brutal
+           flex items-center;
   }
 
   .game-button-outline {
-    @apply px-6 py-3 border border-primary-white text-primary-white font-mono
-           hover:bg-primary-red hover:border-primary-red 
-           transition-all duration-300 flex items-center;
+    @apply px-6 py-3 bg-brutal-white
+           border-2 border-brutal-black text-brutal-black 
+           font-mono hover:bg-brutal-red hover:text-brutal-white
+           hover:border-brutal-red transition-colors shadow-brutal
+           flex items-center;
+  }
+
+  /* Brutalist Card */
+  .brutal-card {
+    @apply bg-brutal-white border-4 border-brutal-black 
+           shadow-brutal p-6;
+  }
+
+  /* Brutalist Title */
+  .brutal-title {
+    @apply font-display text-4xl md:text-6xl font-black 
+           text-brutal-black leading-none;
+  }
+
+  /* Brutalist Text */
+  .brutal-text {
+    @apply font-mono text-lg text-brutal-black;
   }
 }
 
+/* VHS Effect Styles */
 .vhs-scanlines {
   background: linear-gradient(
     to bottom,
@@ -45,10 +73,11 @@
 }
 
 .vhs-noise {
-  background: url('/noise.png');
+  background: url("/noise.png");
   animation: noise 1s infinite alternate;
 }
 
+/* Animations */
 @keyframes scanlines {
   0% {
     transform: translateY(0);
@@ -59,6 +88,144 @@
 }
 
 @keyframes noise {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(1px, 1px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(1px, 1px);
+  }
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  33% {
+    transform: translate(-5px, 3px);
+  }
+  66% {
+    transform: translate(5px, -3px);
+  }
+}
+
+/* Brutalist Utility Classes */
+.brutal-shadow {
+  box-shadow: 4px 4px 0 0 theme("colors.brutal.black");
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0 0 theme("colors.brutal.black");
+}
+
+.brutal-border {
+  @apply border-4 border-brutal-black;
+}
+
+.brutal-hover {
+  @apply transition-transform hover:translate-x-1 hover:translate-y-1;
+}
+
+/* Pattern Background */
+.brutal-pattern {
+  background-image: radial-gradient(
+    circle at center,
+    theme("colors.brutal.black") 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+  animation: glitch 1s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch::before {
+  left: -2px;
+  text-shadow: 2px 0 theme("colors.brutal.red");
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: 2px;
+  text-shadow: -2px 0 theme("colors.brutal.blue");
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(44px, 9999px, 98px, 0);
+  }
+  5% {
+    clip: rect(28px, 9999px, 59px, 0);
+  }
+  10% {
+    clip: rect(65px, 9999px, 36px, 0);
+  }
+  15% {
+    clip: rect(89px, 9999px, 92px, 0);
+  }
+  20% {
+    clip: rect(32px, 9999px, 100px, 0);
+  }
+  25% {
+    clip: rect(12px, 9999px, 60px, 0);
+  }
+  30% {
+    clip: rect(78px, 9999px, 81px, 0);
+  }
+  35% {
+    clip: rect(54px, 9999px, 18px, 0);
+  }
+  40% {
+    clip: rect(67px, 9999px, 71px, 0);
+  }
+  45% {
+    clip: rect(99px, 9999px, 23px, 0);
+  }
+  50% {
+    clip: rect(82px, 9999px, 39px, 0);
+  }
+  55% {
+    clip: rect(10px, 9999px, 89px, 0);
+  }
+  60% {
+    clip: rect(48px, 9999px, 28px, 0);
+  }
+  65% {
+    clip: rect(65px, 9999px, 91px, 0);
+  }
+  70% {
+    clip: rect(29px, 9999px, 70px, 0);
+  }
+  75% {
+    clip: rect(98px, 9999px, 86px, 0);
+  }
+  80% {
+    clip: rect(16px, 9999px, 96px, 0);
+  }
+  85% {
+    clip: rect(53px, 9999px, 13px, 0);
+  }
+  90% {
+    clip: rect(25px, 9999px, 67px, 0);
+  }
+  95% {
+    clip: rect(82px, 9999px, 29px, 0);
+  }
+  100% {
+    clip: rect(93px, 9999px, 76px, 0);
+  }
 }
