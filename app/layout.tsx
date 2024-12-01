@@ -1,8 +1,8 @@
 // /app/layout.tsx
-import { Analytics } from '@/components/Analytics';
 import { CookieConsent } from '@/components/CookieConsent';
 import { Footer } from '@/components/layout/Footer';
 import { Navigation } from '@/components/layout/Navigation';
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from "next";
 import "./globals.css";
 
