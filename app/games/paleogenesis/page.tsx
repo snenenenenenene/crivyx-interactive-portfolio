@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // /app/games/paleogenesis/page.tsx
 'use client';
 

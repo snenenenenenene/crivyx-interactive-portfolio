@@ -74,7 +74,7 @@ export default function HomePage() {
                 <div>
                   <h2 className="text-6xl font-display font-black mb-8">PALEOGENESIS</h2>
                   <p className="text-xl mb-8">
-                    A psychological horror survival experience where prehistoric predators transform Antwerp's iconic landmarks into a hunting ground of primal terror.
+                    A psychological horror survival experience where prehistoric predators transform Antwerp&apos;s iconic landmarks into a hunting ground of primal terror.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     {[

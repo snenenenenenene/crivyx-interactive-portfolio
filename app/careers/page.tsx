@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // /app/careers/page.tsx
 'use client';
 

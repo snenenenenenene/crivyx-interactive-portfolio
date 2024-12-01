@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // /components/home/CommunitySurvey.tsx
 'use client';
 
