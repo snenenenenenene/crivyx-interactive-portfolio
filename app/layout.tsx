@@ -1,5 +1,6 @@
 // /app/layout.tsx
 import Navigation from '@/components/layout/Navigation';
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from "next";
 import './globals.css';
 
@@ -56,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased bg-brutal-white min-h-screen flex flex-col">
+        <Analytics />
         <Navigation />
         <main className="flex-grow mt-32 transition-all duration-300">
           {children}
