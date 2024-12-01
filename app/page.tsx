@@ -39,8 +39,8 @@ const HomePage = () => {
             <div className="flex items-center h-full space-x-6">
               <Link href="/" aria-label="Navigate to homepage" className="h-full flex items-center">
                 <Image
-                  src="/logo.svg"
-                  alt="Coragyps Interactive Games Logo"
+                  src="/vulture.png"
+                  alt="Crivyx Interactive Games Logo"
                   width={136}
                   height={96}
                   priority
@@ -54,7 +54,7 @@ const HomePage = () => {
                   fontWeight: 1000
                 }}
               >
-                CORAGYPS INTERACTIVE
+                CRIVYX INTERACTIVE
               </h1>
             </div>
 

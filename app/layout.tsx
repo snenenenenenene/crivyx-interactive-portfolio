@@ -4,7 +4,7 @@ import { Analytics } from '../components/Analytics';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Coragyps Interactive - Indie Game Studio",
+  title: "Crivyx Interactive - Indie Game Studio",
   description: "We develop and publish finely-crafted horror games.",
 };
 
