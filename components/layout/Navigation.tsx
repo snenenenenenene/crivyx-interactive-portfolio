@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const navigation = [
-	{ name: 'Paleogenesis', href: '/games/paleogenesis' },
 	{ name: 'About', href: '/about' },
 	{ name: 'Careers', href: '/careers' },
 	{ name: 'Community', href: '/community' },
