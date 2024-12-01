@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client';
 
 import { cn } from '@/lib/utils';
@@ -124,6 +125,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(({
 			ref={ref}
 			className={baseStyles}
 			initial={hover ? { opacity: 0, y: 20 } : false}
+			// @ts-ignore
 			whileInView={hover ? { opacity: 1, y: 0 } : false}
 			viewport={{ once: true }}
 			{...props}
