@@ -120,7 +120,7 @@ export default function HomePage() {
                 <div className="relative aspect-[4/3]">
                   <div className="absolute inset-4 border-4 border-brutal-black">
                     <Image
-                      src="/games/paleogenesis/overview.jpg"
+                      src="/games/paleogenesis/central-station.webp"
                       alt="Paleogenesis"
                       fill
                       className="object-cover"

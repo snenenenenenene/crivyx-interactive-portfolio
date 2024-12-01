@@ -1,10 +1,7 @@
 // /app/layout.tsx
-import { CookieConsent } from '@/components/CookieConsent';
-import { Footer } from '@/components/layout/Footer';
-import { Navigation } from '@/components/layout/Navigation';
-import { Analytics } from '@vercel/analytics/next';
+import Navigation from '@/components/layout/Navigation';
 import type { Metadata } from "next";
-import "./globals.css";
+import './globals.css';
 
 export const metadata: Metadata = {
   title: {
@@ -44,47 +41,25 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
     creator: "@CrixyxGames"
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   icons: {
+    icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180' }
-    ],
+    apple: '/apple-touch-icon.png',
   },
-  manifest: '/site.webmanifest',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  themeColor: '#000000'
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased bg-primary-black text-primary-white min-h-screen flex flex-col">
+      <body className="antialiased bg-brutal-white min-h-screen flex flex-col">
         <Navigation />
-        <main id="main-content" className="flex-grow">
+        <main className="flex-grow mt-32 transition-all duration-300">
           {children}
         </main>
-        <Footer />
-        <CookieConsent />
-        <Analytics />
       </body>
     </html>
   );
