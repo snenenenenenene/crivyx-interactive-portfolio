@@ -1,9 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { forwardRef } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { forwardRef } from 'react';
 
 // Button Component
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,7 +18,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
 	className,
 	variant = 'default',
 	size = 'default',
-	isLoading = false,
+	// isLoading = false,
 	leftIcon,
 	rightIcon,
 	children,
@@ -39,17 +39,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
 	);
 
 	return (
-		<motion.button
+		<button
 			ref={ref}
 			className={baseStyles}
-			whileHover={{ scale: 1.02 }}
-			whileTap={{ scale: 0.98 }}
+			// whileHover={{ scale: 1.02 }}
+			// whileTap={{ scale: 0.98 }}
 			{...props}
 		>
 			{leftIcon && <span className="mr-2">{leftIcon}</span>}
 			{children}
 			{rightIcon && <span className="ml-2">{rightIcon}</span>}
-		</motion.button>
+		</button>
 	);
 });
 Button.displayName = 'Button';
@@ -66,7 +66,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(({
 	...props
 }, ref) => {
 	return (
-		<motion.div
+		<div
 			ref={ref}
 			className={cn(
 				'bg-surface-light',
@@ -74,11 +74,11 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(({
 				hover && 'hover:bg-surface group',
 				className
 			)}
-			whileHover={hover ? { y: -2 } : undefined}
+			// whileHover={hover ? { y: -2 } : undefined}
 			{...props}
 		>
 			{children}
-		</motion.div>
+		</div>
 	);
 });
 Card.displayName = 'Card';
@@ -125,7 +125,7 @@ export const Section = ({
 			</div>
 		</section>
 	);
-});
+};
 
 // ImageCard Component
 interface ImageCardProps {
@@ -149,10 +149,9 @@ export const ImageCard = ({
 				whileHover={{ scale: 1.05 }}
 				className="relative h-full transition-transform duration-700"
 			>
-				<Image
+				<img
 					src={src}
 					alt={alt}
-					fill
 					className="object-cover"
 				/>
 				<div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60" />
