@@ -1,71 +1,76 @@
-/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import { config } from '@/config/config';
 import { motion } from 'framer-motion';
 import { Brain, Code2, HeartHandshake, Users } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const values = [
 	{
-		icon: <Code2 className="w-8 h-8" />,
-		title: 'MERIT OVER CREDENTIALS',
-		description: 'We value real skills and passion over traditional qualifications. Show us what you can do, not what paper says you can do.',
+		icon: <Code2 className="w-6 h-6" />,
+		title: "Merit Over Credentials",
+		description: "We value real skills and passion over traditional qualifications. Your ability matters more than your paper trail."
 	},
 	{
-		icon: <Users className="w-8 h-8" />,
-		title: 'TRANSPARENT GROWTH',
-		description: 'Our story point system ensures fair compensation based on actual contributions, not hours worked or office politics.',
+		icon: <Users className="w-6 h-6" />,
+		title: "Transparent Growth",
+		description: "Our story point system ensures fair compensation based on actual contributions, not hours worked or office politics."
 	},
 	{
-		icon: <Brain className="w-8 h-8" />,
-		title: 'INNOVATION FIRST',
-		description: "We're reimagining horror gaming while also revolutionizing how game studios operate and treat their team members.",
+		icon: <Brain className="w-6 h-6" />,
+		title: "Innovation First",
+		description: "We're reimagining horror gaming while revolutionizing how game studios operate and treat their team members."
 	},
 	{
-		icon: <HeartHandshake className="w-8 h-8" />,
-		title: 'PEOPLE OVER PROCESS',
-		description: 'Great games come from empowered creators. No arbitrary requirements, just pure talent and passion.',
-	},
+		icon: <HeartHandshake className="w-6 h-6" />,
+		title: "People Over Process",
+		description: "Great games come from empowered creators. No arbitrary requirements, just pure talent and passion."
+	}
 ];
 
 export default function AboutPage() {
 	return (
-		<div className="min-h-screen bg-brutal-white">
+		<div className="min-h-screen bg-black">
 			{/* Hero Section */}
-			<section className="relative min-h-[60vh] flex items-center border-b-4 border-brutal-black bg-brutal-black">
-				<div className="absolute inset-0 opacity-5">
-					<div className="absolute inset-0"
-						style={{
-							backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)',
-							backgroundSize: '20px 20px'
-						}}
-					/>
+			<section className="relative h-[70vh]">
+				<div className="absolute inset-0">
+					<div className="absolute inset-0 bg-black/60" />
+					<div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 				</div>
 
-				<div className="container mx-auto px-6">
+				<div className="relative h-full flex items-center">
+					<div className="container mx-auto px-6">
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.5 }}
+							className="max-w-3xl pt-20"
+						>
+							<h1 className="text-7xl md:text-8xl font-display tracking-tight text-white font-black mb-8">
+								Our Vision
+							</h1>
+							<p className="text-xl text-gray-300 mb-10 leading-relaxed">
+								Founded in {config.company.foundedYear}, we're redefining both horror gaming
+								and game studio culture through innovation and merit-based growth.
+							</p>
+						</motion.div>
+					</div>
+				</div>
+
+				<div className="absolute bottom-12 left-1/2 -translate-x-1/2">
 					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						className="max-w-3xl"
+						animate={{ y: [0, 10, 0] }}
+						transition={{ repeat: Infinity, duration: 1.5 }}
+						className="flex flex-col items-center"
 					>
-						<div className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black">
-							<h1 className="text-5xl font-display font-black mb-6">ABOUT CRIVYX</h1>
-							<p className="text-xl text-brutal-black mb-4">
-								Founded in {config.company.foundedYear}, Crivyx Interactive is redefining
-								both horror gaming and game studio culture through innovation and merit-based growth.
-							</p>
-							<p className="text-xl text-brutal-black">
-								Based in {config.company.location}, we're a team of passionate creators
-								challenging industry norms while crafting unforgettable horror experiences.
-							</p>
-						</div>
+						<div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white to-transparent" />
 					</motion.div>
 				</div>
 			</section>
 
 			{/* Values Section */}
-			<section className="py-24 bg-brutal-white">
+			<section className="py-24 bg-zinc-900">
 				<div className="container mx-auto px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
@@ -73,10 +78,12 @@ export default function AboutPage() {
 						viewport={{ once: true }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-4xl font-display font-black mb-6">OUR VALUES</h2>
-						<p className="text-xl text-brutal-black max-w-2xl mx-auto">
-							At Crivyx Interactive, we're building more than games. We're creating a
-							new standard for how game studios should operate.
+						<h2 className="text-3xl md:text-4xl text-white font-bold mb-6">
+							Our Values
+						</h2>
+						<p className="text-xl text-gray-400 max-w-2xl mx-auto">
+							We're building more than games. We're creating a new standard for how
+							game studios should operate.
 						</p>
 					</motion.div>
 
@@ -88,12 +95,14 @@ export default function AboutPage() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: index * 0.1 }}
-								className="relative group"
+								className="group"
 							>
-								<div className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black">
-									<div className="text-brutal-red mb-4">{value.icon}</div>
-									<h3 className="text-xl font-mono font-bold mb-2">{value.title}</h3>
-									<p className="text-brutal-black">{value.description}</p>
+								<div className="bg-black p-8 hover:bg-zinc-800 transition-colors duration-300">
+									<div className="text-brutal-red mb-6 group-hover:scale-110 transition-transform duration-300">
+										{value.icon}
+									</div>
+									<h3 className="text-xl text-white font-medium mb-4">{value.title}</h3>
+									<p className="text-gray-400">{value.description}</p>
 								</div>
 							</motion.div>
 						))}
@@ -102,7 +111,7 @@ export default function AboutPage() {
 			</section>
 
 			{/* Team Section */}
-			<section className="py-24 bg-brutal-black">
+			<section className="py-24 bg-black">
 				<div className="container mx-auto px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
@@ -110,10 +119,10 @@ export default function AboutPage() {
 						viewport={{ once: true }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-4xl font-display text-brutal-white font-black mb-6">
-							MEET THE TEAM
+						<h2 className="text-3xl md:text-4xl text-white font-bold mb-6">
+							Meet The Team
 						</h2>
-						<p className="text-xl text-brutal-gray-300 max-w-2xl mx-auto">
+						<p className="text-xl text-gray-400 max-w-2xl mx-auto">
 							A collective of passionate creators pushing the boundaries of horror gaming.
 						</p>
 					</motion.div>
@@ -128,31 +137,33 @@ export default function AboutPage() {
 								transition={{ delay: index * 0.1 }}
 								className="group"
 							>
-								<div className="bg-brutal-white p-6 shadow-brutal border-4 border-brutal-black">
-									<div className="relative aspect-square mb-6 overflow-hidden border-2 border-brutal-black">
+								<div className="bg-zinc-900">
+									<div className="relative aspect-square">
 										<Image
 											src={member.image}
 											alt={member.name}
 											fill
-											className="object-cover filter transition-all duration-500
-                               group-hover:scale-110"
+											className="object-cover filter grayscale group-hover:grayscale-0 
+                               transition-all duration-500"
 										/>
 									</div>
-									<h3 className="text-xl font-mono font-bold mb-2">{member.name}</h3>
-									<p className="text-brutal-red font-mono mb-4">{member.role}</p>
-									<p className="text-brutal-black mb-6">{member.bio}</p>
-									<div className="flex gap-4">
-										{Object.entries(member.socials).map(([platform, url]) => (
-											<a
-												key={platform}
-												href={url}
-												target="_blank"
-												rel="noopener noreferrer"
-												className="text-brutal-black hover:text-brutal-red transition-colors text-sm font-mono"
-											>
-												{platform.charAt(0).toUpperCase() + platform.slice(1)}
-											</a>
-										))}
+									<div className="p-6">
+										<h3 className="text-xl text-white font-medium mb-2">{member.name}</h3>
+										<p className="text-brutal-red font-mono mb-4">{member.role}</p>
+										<p className="text-gray-400 mb-6">{member.bio}</p>
+										<div className="flex gap-4">
+											{Object.entries(member.socials).map(([platform, url]) => (
+												<a
+													key={platform}
+													href={url}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="text-gray-500 hover:text-brutal-red transition-colors"
+												>
+													{platform.charAt(0).toUpperCase() + platform.slice(1)}
+												</a>
+											))}
+										</div>
 									</div>
 								</div>
 							</motion.div>
@@ -161,31 +172,29 @@ export default function AboutPage() {
 				</div>
 			</section>
 
-			{/* Contact Section */}
+			{/* Join Us CTA */}
 			<section className="py-24 bg-brutal-red">
 				<div className="container mx-auto px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						className="text-center"
+						className="text-center max-w-3xl mx-auto"
 					>
-						<h2 className="text-4xl font-display text-brutal-white font-black mb-6">
-							GET IN TOUCH
+						<h2 className="text-4xl md:text-5xl text-white font-black mb-6">
+							Join Our Journey
 						</h2>
-						<p className="text-xl text-brutal-white mb-8 max-w-2xl mx-auto">
-							Want to learn more about our studio or discuss potential collaborations?
-							We'd love to hear from you.
+						<p className="text-xl text-white/90 mb-10">
+							We're looking for passionate creators who want to push the boundaries
+							of horror gaming. If you think you have what it takes, we'd love to hear from you.
 						</p>
-						<motion.a
-							href={`mailto:${config.company.contact.general}`}
-							whileHover={{ x: 4, y: 4 }}
-							className="bg-brutal-white text-brutal-black font-mono px-8 py-4 
-                       inline-block shadow-brutal border-2 border-brutal-black 
-                       hover:bg-brutal-black hover:text-brutal-white transition-colors"
+						<Link
+							href="/careers"
+							className="inline-flex items-center px-8 py-4 bg-black text-white 
+                       hover:bg-white hover:text-black transition-colors duration-300"
 						>
-							CONTACT US
-						</motion.a>
+							View Open Positions
+						</Link>
 					</motion.div>
 				</div>
 			</section>

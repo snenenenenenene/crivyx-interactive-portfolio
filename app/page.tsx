@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -61,16 +62,17 @@ export default function HomePage() {
                 transform Antwerp's iconic landmarks into hunting grounds.
               </p>
               <motion.a
-                href="https://store.steampowered.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                // href="https://store.steampowered.com"
+                href='/games/paleogenesis'
+                // target="_blank"
+                // rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-white text-black 
                          font-medium hover:bg-brutal-red hover:text-white transition-colors 
                          duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Wishlist on Steam
+                See More
               </motion.a>
             </motion.div>
           </div>

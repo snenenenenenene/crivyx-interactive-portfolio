@@ -1,8 +1,6 @@
-/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronRight, Gamepad2, Shield, Zap } from 'lucide-react';
 import Image from 'next/image';
 
 const marketStats = [
@@ -41,68 +39,58 @@ const competitorAnalysis = [
 	}
 ];
 
-const uniqueAdvantages = [
-	{
-		icon: <Zap className="w-8 h-8" />,
-		title: "INNOVATIVE GAMEPLAY",
-		description: "Unique blend of psychological horror, survival mechanics, and multiplayer dynamics."
-	},
-	{
-		icon: <Shield className="w-8 h-8" />,
-		title: "STRONG IP",
-		description: "Original IP with potential for franchise development and expanded universe."
-	},
-	{
-		icon: <Gamepad2 className="w-8 h-8" />,
-		title: "SCALABLE MODEL",
-		description: "Merit-based development system enabling efficient scaling and talent retention."
-	}
-];
-
 export default function InvestorsPage() {
 	return (
-		<div className="min-h-screen bg-brutal-white">
+		<div className="min-h-screen bg-black">
 			{/* Hero Section */}
-			<section className="relative min-h-[60vh] flex items-center border-b-4 border-brutal-black bg-brutal-black">
-				<div className="absolute inset-0 opacity-5">
-					<div className="absolute inset-0"
-						style={{
-							backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)',
-							backgroundSize: '20px 20px'
-						}}
-					/>
+			<section className="relative h-[70vh]">
+				<div className="absolute inset-0">
+					<div className="absolute inset-0 bg-black/60" />
+					<div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 				</div>
 
-				<div className="container mx-auto px-6">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						className="max-w-3xl"
-					>
-						<div className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black">
-							<h1 className="text-5xl font-display font-black mb-6">
-								INVEST IN THE FUTURE OF HORROR GAMING
+				<div className="relative h-full flex items-center">
+					<div className="container mx-auto px-6">
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.5 }}
+							className="max-w-3xl pt-20"
+						>
+							<h1 className="text-7xl md:text-8xl font-display tracking-tight text-white font-black mb-8">
+								Investment Opportunity
 							</h1>
-							<p className="text-xl text-brutal-black mb-8">
+							<p className="text-xl text-gray-300 mb-10 leading-relaxed">
 								Join us in revolutionizing the horror gaming industry through innovative
 								gameplay mechanics and a unique merit-based development approach.
 							</p>
 							<motion.button
-								whileHover={{ x: 4, y: 4 }}
-								className="bg-brutal-black text-brutal-white font-mono px-8 py-4 
-                         inline-block shadow-brutal border-2 border-brutal-black 
-                         hover:bg-brutal-red transition-colors"
 								onClick={() => window.location.href = 'mailto:investors@crivyx.com'}
+								className="inline-flex items-center px-8 py-4 bg-white text-black 
+                         font-medium hover:bg-brutal-red hover:text-white transition-colors 
+                         duration-300"
+								whileHover={{ scale: 1.02 }}
+								whileTap={{ scale: 0.98 }}
 							>
-								REQUEST PITCH DECK
+								Request Pitch Deck
 							</motion.button>
-						</div>
+						</motion.div>
+					</div>
+				</div>
+
+				<div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+					<motion.div
+						animate={{ y: [0, 10, 0] }}
+						transition={{ repeat: Infinity, duration: 1.5 }}
+						className="flex flex-col items-center"
+					>
+						<div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white to-transparent" />
 					</motion.div>
 				</div>
 			</section>
 
-			{/* Market Overview Section */}
-			<section className="py-24 bg-brutal-black text-brutal-white">
+			{/* Market Stats Section */}
+			<section className="py-24 bg-zinc-900">
 				<div className="container mx-auto px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
@@ -110,55 +98,36 @@ export default function InvestorsPage() {
 						viewport={{ once: true }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-4xl font-display font-black mb-6">MARKET OVERVIEW</h2>
-						<p className="text-xl text-brutal-gray-300 max-w-2xl mx-auto">
+						<h2 className="text-3xl md:text-4xl text-white font-bold mb-6">
+							Market Overview
+						</h2>
+						<p className="text-xl text-gray-400 max-w-2xl mx-auto">
 							Targeting a rapidly expanding market at the intersection of horror gaming
 							and dinosaur enthusiasm.
 						</p>
 					</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-						{marketStats.map((item, index) => (
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{marketStats.map((stat, index) => (
 							<motion.div
 								key={index}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: index * 0.1 }}
-								className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black"
+								className="bg-black p-8 hover:bg-zinc-800 transition-colors duration-300"
 							>
-								<div className="text-brutal-red text-5xl font-display font-black mb-2">
-									{item.stat}
-								</div>
-								<div className="text-brutal-black font-mono mb-2">{item.label}</div>
-								<div className="text-brutal-red font-mono text-sm">{item.trend}</div>
+								<h3 className="text-4xl text-brutal-red font-bold mb-2">{stat.stat}</h3>
+								<p className="text-white mb-2">{stat.label}</p>
+								<p className="text-gray-400 text-sm">{stat.trend}</p>
 							</motion.div>
 						))}
-					</div>
-
-					{/* Target Market */}
-					<div className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black text-brutal-black mb-8">
-						<h3 className="text-2xl font-mono font-bold mb-6">TARGET MARKET</h3>
-						<div className="grid md:grid-cols-3 gap-8">
-							<div>
-								<h4 className="font-mono text-brutal-red mb-2">DEMOGRAPHICS</h4>
-								<p>Gamers aged 18-35 with strong interest in horror and dinosaur themes</p>
-							</div>
-							<div>
-								<h4 className="font-mono text-brutal-red mb-2">GEOGRAPHICS</h4>
-								<p>Western Europe, North America, and horror-enthusiast regions</p>
-							</div>
-							<div>
-								<h4 className="font-mono text-brutal-red mb-2">PSYCHOGRAPHICS</h4>
-								<p>Mature gamers valuing immersion, AI, and scientific accuracy</p>
-							</div>
-						</div>
 					</div>
 				</div>
 			</section>
 
-			{/* Competitor Analysis */}
-			<section className="py-24 bg-brutal-white">
+			{/* Market Gap Analysis */}
+			<section className="py-24 bg-black">
 				<div className="container mx-auto px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
@@ -166,40 +135,40 @@ export default function InvestorsPage() {
 						viewport={{ once: true }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-4xl font-display font-black mb-6">MARKET GAP ANALYSIS</h2>
-						<p className="text-xl text-brutal-black max-w-2xl mx-auto">
+						<h2 className="text-3xl md:text-4xl text-white font-bold mb-6">
+							Market Gap Analysis
+						</h2>
+						<p className="text-xl text-gray-400 max-w-2xl mx-auto">
 							Identifying and filling the void between dinosaur games and psychological horror.
 						</p>
 					</motion.div>
 
-					<div className="space-y-8">
+					<div className="space-y-6">
 						{competitorAnalysis.map((category, index) => (
 							<motion.div
-								key={index}
+								key={category.category}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: index * 0.1 }}
-								className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black"
 							>
-								<h3 className="text-xl font-mono font-bold mb-4">{category.category}</h3>
-								<div className="grid md:grid-cols-2 gap-8">
-									<div>
-										<h4 className="font-mono text-brutal-red mb-2">NOTABLE TITLES</h4>
-										<div className="flex flex-wrap gap-2">
-											{category.examples.map((example, i) => (
-												<span
-													key={i}
-													className="inline-block bg-brutal-black text-brutal-white px-3 py-1 text-sm font-mono"
-												>
-													{example}
-												</span>
-											))}
+								<div className="bg-zinc-900 p-8">
+									<h3 className="text-xl text-white font-bold mb-6">{category.category}</h3>
+									<div className="grid md:grid-cols-2 gap-8">
+										<div>
+											<h4 className="text-brutal-red font-medium mb-4">Notable Titles</h4>
+											<div className="flex flex-wrap gap-2">
+												{category.examples.map((example) => (
+													<span key={example} className="px-3 py-1 bg-black text-white text-sm">
+														{example}
+													</span>
+												))}
+											</div>
 										</div>
-									</div>
-									<div>
-										<h4 className="font-mono text-brutal-red mb-2">MARKET GAP</h4>
-										<p className="text-brutal-black">{category.gap}</p>
+										<div>
+											<h4 className="text-brutal-red font-medium mb-4">Market Gap</h4>
+											<p className="text-gray-400">{category.gap}</p>
+										</div>
 									</div>
 								</div>
 							</motion.div>
@@ -209,7 +178,7 @@ export default function InvestorsPage() {
 			</section>
 
 			{/* Game Preview */}
-			<section className="py-24 bg-brutal-black">
+			<section className="py-24 bg-zinc-900">
 				<div className="container mx-auto px-6">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 						<motion.div
@@ -217,30 +186,30 @@ export default function InvestorsPage() {
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
 						>
-							<h2 className="text-4xl font-display text-brutal-white font-black mb-6">
-								PALEOGENESIS
+							<h2 className="text-3xl md:text-4xl text-white font-bold mb-6">
+								Paleogenesis
 							</h2>
-							<p className="text-xl text-brutal-gray-300 mb-8">
+							<p className="text-xl text-gray-300 mb-8">
 								Our flagship title combines psychological horror with multiplayer survival,
 								set in a uniquely reimagined Antwerp. Launch planned for major platforms
 								with strong community interest.
 							</p>
 							<div className="space-y-6">
-								<div className="flex items-center gap-4 text-brutal-white">
-									<div className="w-32 font-mono">Platform</div>
+								<div className="flex items-center gap-4 text-white">
+									<div className="w-32 font-mono text-gray-400">Platform</div>
 									<div>Steam (PC) + Console Versions Planned</div>
 								</div>
-								<div className="flex items-center gap-4 text-brutal-white">
-									<div className="w-32 font-mono">Genre</div>
+								<div className="flex items-center gap-4 text-white">
+									<div className="w-32 font-mono text-gray-400">Genre</div>
 									<div>Psychological Horror, Multiplayer Survival</div>
 								</div>
-								<div className="flex items-center gap-4 text-brutal-white">
-									<div className="w-32 font-mono">Status</div>
+								<div className="flex items-center gap-4 text-white">
+									<div className="w-32 font-mono text-gray-400">Status</div>
 									<div>Pre-Alpha Development</div>
 								</div>
-								<div className="flex items-center gap-4 text-brutal-white">
-									<div className="w-32 font-mono">Release</div>
-									<div>Q4 2027 (Estimated)</div>
+								<div className="flex items-center gap-4 text-white">
+									<div className="w-32 font-mono text-gray-400">Release</div>
+									<div>Q4 2025 (Estimated)</div>
 								</div>
 							</div>
 						</motion.div>
@@ -254,105 +223,9 @@ export default function InvestorsPage() {
 								src="/games/paleogenesis/overview.jpg"
 								alt="Paleogenesis Game Preview"
 								fill
-								className="object-cover border-4 border-brutal-white"
+								className="object-cover"
 							/>
 						</motion.div>
-					</div>
-				</div>
-			</section>
-
-			{/* Revenue Model */}
-			<section className="py-24 bg-brutal-white">
-				<div className="container mx-auto px-6">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						className="text-center mb-16"
-					>
-						<h2 className="text-4xl font-display font-black mb-6">REVENUE MODEL</h2>
-						<p className="text-xl text-brutal-black max-w-2xl mx-auto">
-							Multiple revenue streams ensuring sustainable growth and profitability.
-						</p>
-					</motion.div>
-
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-						<div className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black">
-							<h3 className="text-xl font-mono font-bold mb-4">PRIMARY REVENUE</h3>
-							<ul className="space-y-4">
-								<li className="flex items-start gap-2">
-									<ChevronRight className="w-5 h-5 text-brutal-red flex-shrink-0 mt-1" />
-									<div>
-										<span className="font-bold">Base Game Sales</span>
-										<p className="text-brutal-gray-700">Premium pricing with strong initial sales projection</p>
-									</div>
-								</li>
-								<li className="flex items-start gap-2">
-									<ChevronRight className="w-5 h-5 text-brutal-red flex-shrink-0 mt-1" />
-									<div>
-										<span className="font-bold">DLC & Expansions</span>
-										<p className="text-brutal-gray-700">Additional content and new locations</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black">
-							<h3 className="text-xl font-mono font-bold mb-4">SECONDARY REVENUE</h3>
-							<ul className="space-y-4">
-								<li className="flex items-start gap-2">
-									<ChevronRight className="w-5 h-5 text-brutal-red flex-shrink-0 mt-1" />
-									<div>
-										<span className="font-bold">Merchandise</span>
-										<p className="text-brutal-gray-700">Branded merchandise and collectibles</p>
-									</div>
-								</li>
-								<li className="flex items-start gap-2">
-									<ChevronRight className="w-5 h-5 text-brutal-red flex-shrink-0 mt-1" />
-									<div>
-										<span className="font-bold">Licensing</span>
-										<p className="text-brutal-gray-700">IP licensing for additional products</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Unique Advantages */}
-			<section className="py-24 bg-brutal-black">
-				<div className="container mx-auto px-6">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						className="text-center mb-16"
-					>
-						<h2 className="text-4xl font-display font-black mb-6 text-brutal-white">
-							COMPETITIVE ADVANTAGES
-						</h2>
-						<p className="text-xl text-brutal-gray-300 max-w-2xl mx-auto">
-							Our unique approach sets us apart in both game development and studio operations.
-						</p>
-					</motion.div>
-
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-						{uniqueAdvantages.map((advantage, index) => (
-							<motion.div
-								key={advantage.title}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ delay: index * 0.1 }}
-								className="relative group"
-							>
-								<div className="bg-brutal-white p-8 shadow-brutal border-4 border-brutal-black h-full">
-									<div className="text-brutal-red mb-4">{advantage.icon}</div>
-									<h3 className="text-xl font-mono font-bold mb-2">{advantage.title}</h3>
-									<p className="text-brutal-black">{advantage.description}</p>
-								</div>
-							</motion.div>
-						))}
 					</div>
 				</div>
 			</section>
@@ -364,35 +237,31 @@ export default function InvestorsPage() {
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						className="text-center"
+						className="text-center max-w-3xl mx-auto"
 					>
-						<h2 className="text-4xl font-display text-brutal-white font-black mb-6">
-							JOIN OUR JOURNEY
+						<h2 className="text-4xl md:text-5xl text-white font-black mb-6">
+							Join Our Journey
 						</h2>
-						<p className="text-xl text-brutal-white mb-8 max-w-2xl mx-auto">
+						<p className="text-xl text-white/90 mb-10">
 							We're seeking strategic partners to help us revolutionize the horror gaming
 							industry. Contact us to learn more about investment opportunities.
 						</p>
-						<motion.div className="flex flex-wrap justify-center gap-4">
-							<motion.button
-								whileHover={{ x: 4, y: 4 }}
-								className="bg-brutal-white text-brutal-black font-mono px-8 py-4 
-                         inline-block shadow-brutal border-2 border-brutal-black 
-                         hover:bg-brutal-black hover:text-brutal-white transition-colors"
+						<div className="flex flex-wrap justify-center gap-4">
+							<button
 								onClick={() => window.location.href = 'mailto:investors@crivyx.com'}
+								className="inline-flex items-center px-8 py-4 bg-black text-white 
+                         hover:bg-white hover:text-black transition-colors duration-300"
 							>
-								CONNECT WITH US
-							</motion.button>
-							<motion.button
-								whileHover={{ x: 4, y: 4 }}
-								className="bg-brutal-black text-brutal-white font-mono px-8 py-4 
-                         inline-block shadow-brutal border-2 border-brutal-black 
-                         hover:bg-brutal-white hover:text-brutal-black transition-colors"
-								onClick={() => window.location.href = '/assets/pitch_deck.pdf'}
+								Connect With Us
+							</button>
+							<a
+								href="/assets/investor-deck.pdf"
+								className="inline-flex items-center px-8 py-4 bg-white text-black 
+                         hover:bg-black hover:text-white transition-colors duration-300"
 							>
-								DOWNLOAD PITCH DECK
-							</motion.button>
-						</motion.div>
+								Download Pitch Deck
+							</a>
+						</div>
 					</motion.div>
 				</div>
 			</section>
