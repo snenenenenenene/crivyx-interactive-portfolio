@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -42,8 +41,8 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60" />
           <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
         </div>
 
         <div className="relative h-full flex items-center">
@@ -66,7 +65,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-white text-black 
-                         font-medium hover:bg-red-500 hover:text-white transition-colors 
+                         font-medium hover:bg-brutal-red hover:text-white transition-colors 
                          duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -101,8 +100,8 @@ export default function HomePage() {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-neutral-900 p-8 hover:bg-neutral-800 transition-colors duration-300">
-                  <div className="text-red-500 mb-6">{feature.icon}</div>
+                <div className="bg-zinc-900 p-8 hover:bg-zinc-800 transition-colors duration-300">
+                  <div className="text-brutal-red mb-6">{feature.icon}</div>
                   <h3 className="text-lg text-white font-medium mb-3">{feature.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
                 </div>
@@ -113,7 +112,7 @@ export default function HomePage() {
       </section>
 
       {/* Location Preview */}
-      <section className="py-24 bg-neutral-900">
+      <section className="py-24 bg-zinc-900">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -156,7 +155,7 @@ export default function HomePage() {
       </section>
 
       {/* Community CTA */}
-      <section className="py-32 bg-red-500">
+      <section className="py-32 bg-brutal-red">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -10,23 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Neo-brutalist palette
         brutal: {
           black: "#000000",
           white: "#FFFFFF",
-          red: "#FF2E00", // Primary accent
-          yellow: "#FFE800", // Secondary accent
-          blue: "#0019FF", // Tertiary accent
+          red: "#EF4444", // Changed to the modern red
+          secondary: {
+            red: "#DC2626", // A darker shade for hover states
+            light: "#FCA5A5", // A lighter shade for accents
+          },
           gray: {
-            100: "#F2F2F2",
-            200: "#E5E5E5",
-            300: "#D4D4D4",
-            400: "#A3A3A3",
-            500: "#737373",
-            600: "#525252",
-            700: "#404040",
-            800: "#262626",
-            900: "#171717",
+            100: "#F3F4F6",
+            200: "#E5E7EB",
+            300: "#D1D5DB",
+            400: "#9CA3AF",
+            500: "#6B7280",
+            600: "#4B5563",
+            700: "#374151",
+            800: "#1F2937",
+            900: "#111827",
           },
         },
       },
@@ -40,26 +40,6 @@ const config: Config = {
         "brutal-lg": "8px 8px 0 0 #000000",
         "brutal-xl": "12px 12px 0 0 #000000",
         "brutal-2xl": "16px 16px 0 0 #000000",
-      },
-      animation: {
-        glitch: "glitch 1s infinite",
-        "slide-up": "slide-up 0.5s ease-out",
-        "slide-down": "slide-down 0.5s ease-out",
-      },
-      keyframes: {
-        glitch: {
-          "0%, 100%": { transform: "translate(0)" },
-          "33%": { transform: "translate(-5px, 3px)" },
-          "66%": { transform: "translate(5px, -3px)" },
-        },
-        "slide-up": {
-          "0%": { transform: "translateY(100%)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
-        },
-        "slide-down": {
-          "0%": { transform: "translateY(-100%)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
-        },
       },
     },
   },

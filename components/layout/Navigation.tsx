@@ -8,33 +8,28 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const navigation = [
+	{ name: 'Home', href: '/' },
+	{ name: 'Games', href: '/games' },
 	{ name: 'About', href: '/about' },
 	{ name: 'Careers', href: '/careers' },
 	{ name: 'Community', href: '/community' },
 	{ name: 'Investors', href: '/investors' },
 ];
 
-const menuItemVariants = {
-	hidden: { opacity: 0, x: -20 },
-	visible: { opacity: 1, x: 0 }
-};
-
 export default function Navigation() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
 	const pathname = usePathname();
 
-	// Handle scroll behavior
 	useEffect(() => {
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50);
+			setIsScrolled(window.scrollY > 20);
 		};
 
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
-	// Prevent body scroll when menu is open
 	useEffect(() => {
 		if (isOpen) {
 			document.body.style.overflow = 'hidden';
@@ -46,14 +41,16 @@ export default function Navigation() {
 	return (
 		<>
 			<header
-				className={`fixed w-full z-50 transition-all duration-300
-                   ${isScrolled ? 'h-20' : 'h-32'}
-                   bg-brutal-white border-b-4 border-brutal-black`}
+				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+                   ${isScrolled ? 'bg-black/80 backdrop-blur-md' : 'bg-transparent'}`}
 			>
-				<nav className="container mx-auto px-6 h-full">
-					<div className="flex items-center justify-between h-full">
-						{/* Logo and Name */}
-						<Link href="/" className="flex items-center space-x-6">
+				<nav className="container mx-auto px-6">
+					<div className="flex items-center justify-between h-20">
+						{/* Logo */}
+						<Link
+							href="/"
+							className="relative z-50"
+						>
 							<motion.div
 								whileHover={{ scale: 1.05 }}
 								className="relative"
@@ -61,58 +58,42 @@ export default function Navigation() {
 								<Image
 									src="/vulture.png"
 									alt="Crivyx Interactive Logo"
-									width={isScrolled ? 40 : 48}
-									height={isScrolled ? 40 : 48}
+									width={100}
+									height={100}
 									priority
-									className="transition-all duration-300"
+									className="transition-transform duration-300"
 								/>
-							</motion.div>
-							<motion.div
-								initial={{ opacity: 0, x: -20 }}
-								animate={{ opacity: 1, x: 0 }}
-								className="hidden md:block"
-							>
-								<h1 className={`font-display text-brutal-black font-black transition-all duration-300
-                               ${isScrolled ? 'text-xl' : 'text-2xl'}`}>
-									CRIVYX INTERACTIVE
-								</h1>
 							</motion.div>
 						</Link>
 
 						{/* Desktop Navigation */}
-						<div className="hidden md:flex items-center space-x-1">
+						<div className="hidden md:flex items-center space-x-8">
 							{navigation.map((item) => (
 								<Link
 									key={item.name}
 									href={item.href}
+									className={`relative text-sm font-medium transition-colors duration-300
+                            ${pathname === item.href ? 'text-brutal-red' : 'text-white hover:text-brutal-red'}
+                            before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-px
+                            before:bg-brutal-red before:scale-x-0 before:origin-right before:transition-transform
+                            hover:before:scale-x-100 hover:before:origin-left`}
 								>
-									<motion.div
-										whileHover={{ x: 2, y: 2 }}
-										className={`px-4 py-2 font-mono text-brutal-black border-2 m-1
-                              transition-all duration-200 ease-in-out
-                              ${pathname === item.href ?
-												'bg-brutal-red text-brutal-white border-brutal-black shadow-brutal' :
-												'border-transparent hover:border-brutal-black hover:shadow-brutal'}`}
-									>
-										{item.name}
-									</motion.div>
+									{item.name}
 								</Link>
 							))}
 						</div>
 
 						{/* Mobile Menu Button */}
 						<motion.button
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}
-							className="md:hidden p-2 border-2 border-brutal-black hover:bg-brutal-red 
-                       hover:text-brutal-white transition-colors"
+							whileTap={{ scale: 0.9 }}
 							onClick={() => setIsOpen(!isOpen)}
-							aria-label={isOpen ? "Close menu" : "Open menu"}
+							className="relative z-50 p-1 md:hidden text-white hover:text-brutal-red transition-colors"
+							aria-label="Toggle Menu"
 						>
 							{isOpen ? (
-								<X className="h-6 w-6" />
+								<X className="w-6 h-6" />
 							) : (
-								<Menu className="h-6 w-6" />
+								<Menu className="w-6 h-6" />
 							)}
 						</motion.button>
 					</div>
@@ -122,41 +103,54 @@ export default function Navigation() {
 			{/* Mobile Menu */}
 			<AnimatePresence>
 				{isOpen && (
-					<motion.div
-						initial={{ opacity: 0, y: -20 }}
-						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: -20 }}
-						className="fixed inset-0 top-[80px] z-40 bg-brutal-white border-t-4 border-brutal-black"
-					>
-						<div className="container mx-auto px-6 py-8">
-							<div className="flex flex-col space-y-4">
-								{navigation.map((item, i) => (
-									<motion.div
-										key={item.name}
-										variants={menuItemVariants}
-										initial="hidden"
-										animate="visible"
-										transition={{ delay: i * 0.1 }}
-									>
-										<Link
-											href={item.href}
-											onClick={() => setIsOpen(false)}
+					<>
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.2 }}
+							className="fixed inset-0 bg-black/90 backdrop-blur-md z-40"
+							onClick={() => setIsOpen(false)}
+						/>
+						<motion.nav
+							initial={{ x: '100%' }}
+							animate={{ x: 0 }}
+							exit={{ x: '100%' }}
+							transition={{ type: 'tween', duration: 0.3 }}
+							className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-black z-40 overflow-y-auto"
+						>
+							<div className="p-6 pt-24">
+								<div className="flex flex-col space-y-8">
+									{navigation.map((item) => (
+										<motion.div
+											key={item.name}
+											initial={{ opacity: 0, x: 20 }}
+											animate={{ opacity: 1, x: 0 }}
+											transition={{ delay: 0.2 }}
 										>
-											<motion.div
-												whileHover={{ x: 10 }}
-												className={`p-4 font-mono text-2xl font-bold transition-colors
-                                  ${pathname === item.href ?
-														'text-brutal-red' :
-														'text-brutal-black hover:text-brutal-red'}`}
+											<Link
+												href={item.href}
+												onClick={() => setIsOpen(false)}
+												className={`text-2xl font-display ${pathname === item.href
+													? 'text-brutal-red'
+													: 'text-white hover:text-brutal-red'
+													} transition-colors`}
 											>
 												{item.name}
-											</motion.div>
-										</Link>
-									</motion.div>
-								))}
+											</Link>
+										</motion.div>
+									))}
+								</div>
+
+								{/* Social Links or Additional Content can go here */}
+								<div className="mt-12 pt-12 border-t border-white/10">
+									<p className="text-sm text-gray-400">
+										© 2024 Crivyx Interactive
+									</p>
+								</div>
 							</div>
-						</div>
-					</motion.div>
+						</motion.nav>
+					</>
 				)}
 			</AnimatePresence>
 		</>
