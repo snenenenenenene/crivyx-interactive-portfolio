@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Gamepad2, MessageSquare, Star, Users, Video } from 'lucide-react';
+import { MessageSquare, Users } from 'lucide-react';
 
 const communityPlatforms = [
 	{
