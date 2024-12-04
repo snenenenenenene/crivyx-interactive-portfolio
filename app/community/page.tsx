@@ -24,26 +24,6 @@ const communityPlatforms = [
 	}
 ];
 
-const communityFeatures = [
-	{
-		icon: <Star className="w-6 h-6" />,
-		title: "Fan Art Showcase",
-		description: "Share your artwork and get featured in our monthly community highlights.",
-		image: "/community/fan-art.jpg"
-	},
-	{
-		icon: <Gamepad2 className="w-6 h-6" />,
-		title: "Playtesting",
-		description: "Join exclusive playtesting sessions and help shape the game's development.",
-		image: "/community/playtests.jpg"
-	},
-	{
-		icon: <Video className="w-6 h-6" />,
-		title: "Dev Streams",
-		description: "Watch live development streams and participate in Q&A sessions.",
-		image: "/community/dev-streams.jpg"
-	}
-];
 
 export default function CommunityPage() {
 	return (
