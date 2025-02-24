@@ -56,7 +56,7 @@ const questions: Question[] = [
 	},
 	{
 		id: 'feedback',
-		text: 'What would you like to see in Paleogenesis?',
+		text: 'What would you like to see in ORNITHO?',
 		type: 'text'
 	}
 ];

@@ -15,10 +15,10 @@ const pressKitResources = {
 		socialLinks: {
 			twitter: "@CrixyxGames",
 			discord: "discord.gg/crivyx",
-			reddit: "r/Paleogenesis"
+			reddit: "r/ORNITHO"
 		}
 	},
-	description: `Paleogenesis is a psychological survival horror game that transforms Antwerp's iconic landmarks into prehistoric hunting grounds. Players face intelligent dinosaur predators while managing both their physical survival and psychological state.`,
+	description: `ORNITHO is a psychological survival horror game that transforms Antwerp's iconic landmarks into prehistoric hunting grounds. Players face intelligent dinosaur predators while managing both their physical survival and psychological state.`,
 	features: [
 		"Innovative AI system for realistic predator behavior",
 		"Dynamic psychological horror mechanics",
@@ -32,35 +32,35 @@ const pressKitResources = {
 			icon: <Package className="w-6 h-6" />,
 			description: 'Complete press kit including all assets and information',
 			size: '2.5 GB',
-			url: '/downloads/paleogenesis-press-kit.zip'
+			url: '/downloads/ornitho-press-kit.zip'
 		},
 		{
 			type: 'Fact Sheet',
 			icon: <FileText className="w-6 h-6" />,
 			description: 'Game information, features, and company details',
 			size: '156 KB',
-			url: '/downloads/paleogenesis-fact-sheet.pdf'
+			url: '/downloads/ornitho-fact-sheet.pdf'
 		},
 		{
 			type: 'Logo Pack',
 			icon: <ImageIcon className="w-6 h-6" />,
 			description: 'High-resolution logos and brand assets',
 			size: '45 MB',
-			url: '/downloads/paleogenesis-logos.zip'
+			url: '/downloads/ornitho-logos.zip'
 		},
 		{
 			type: 'Screenshot Pack',
 			icon: <ImageIcon className="w-6 h-6" />,
 			description: 'High-resolution screenshots and artwork',
 			size: '1.2 GB',
-			url: '/downloads/paleogenesis-screenshots.zip'
+			url: '/downloads/ornitho-screenshots.zip'
 		},
 		{
 			type: 'Trailer Pack',
 			icon: <Film className="w-6 h-6" />,
 			description: 'Game trailers in various formats',
 			size: '850 MB',
-			url: '/downloads/paleogenesis-trailers.zip'
+			url: '/downloads/ornitho-trailers.zip'
 		}
 	],
 	monetization: {
@@ -84,7 +84,7 @@ export const PressKit = () => {
 				>
 					<h2 className="text-4xl font-mono mb-6">Press Kit</h2>
 					<p className="text-xl text-primary-gray max-w-2xl mx-auto">
-						Download official assets and information about Paleogenesis.
+						Download official assets and information about ORNITHO.
 					</p>
 				</motion.div>
 

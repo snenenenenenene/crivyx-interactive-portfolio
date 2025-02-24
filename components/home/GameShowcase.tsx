@@ -40,13 +40,13 @@ const features = [
 
 const screenshots = [
 	{
-		src: "/projects/paleogenesis-central-station.webp",
+		src: "/projects/ornitho-central-station.webp",
 		alt: "Antwerp Central Station transformed into a prehistoric hunting ground",
 		title: "Central Station",
 		description: "A once-bustling transport hub becomes a deadly maze"
 	},
 	{
-		src: "/projects/paleogenesis-cathedral.webp",
+		src: "/projects/ornitho-cathedral.webp",
 		alt: "Antwerp Cathedral in a post-apocalyptic setting",
 		title: "Cathedral",
 		description: "Gothic architecture meets prehistoric terror"
@@ -137,7 +137,7 @@ export const GameShowcase = () => {
 						</p>
 						<div className="flex flex-wrap justify-center gap-4 pt-4">
 							<motion.a
-								href="/games/paleogenesis"
+								href="/games/ornitho"
 								whileHover={{ scale: 1.02 }}
 								whileTap={{ scale: 0.98 }}
 								className="game-button group"

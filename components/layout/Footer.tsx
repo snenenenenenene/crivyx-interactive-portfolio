@@ -16,7 +16,7 @@ const footerLinks = [
 	{
 		title: 'Games',
 		links: [
-			{ name: 'Paleogenesis', href: '/games/paleogenesis' },
+			{ name: 'ORNITHO', href: '/games/ornitho' },
 			{ name: 'Press Kit', href: '/press' }
 		]
 	},

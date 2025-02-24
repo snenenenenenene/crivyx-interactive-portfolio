@@ -100,8 +100,8 @@ export const config = {
   },
 
   game: {
-    paleogenesis: {
-      title: "Paleogenesis",
+    ornitho: {
+      title: "ORNITHO",
       tagline: "Survive prehistoric terror in modern Antwerp",
       description:
         "A psychological horror survival experience where prehistoric predators transform Antwerp's iconic landmarks into a hunting ground of primal terror.",
@@ -137,13 +137,13 @@ export const config = {
       media: {
         images: [
           {
-            src: "/games/paleogenesis/central-station.webp",
+            src: "/games/ornitho/central-station.webp",
             alt: "Antwerp Central Station transformed into a prehistoric hunting ground",
             caption:
               "Experience Antwerp Central Station as you've never seen it before",
           },
           {
-            src: "/games/paleogenesis/cathedral.webp",
+            src: "/games/ornitho/cathedral.webp",
             alt: "Antwerp Cathedral in a post-apocalyptic setting",
             caption: "Gothic architecture meets prehistoric terror",
           },
@@ -151,8 +151,8 @@ export const config = {
         videos: [
           {
             title: "Announcement Trailer",
-            thumbnail: "/games/paleogenesis/trailer-thumb.jpg",
-            url: "/games/paleogenesis/trailer.mp4",
+            thumbnail: "/games/ornitho/trailer-thumb.jpg",
+            url: "/games/ornitho/trailer.mp4",
           },
         ],
       },

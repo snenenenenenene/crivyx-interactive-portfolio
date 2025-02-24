@@ -188,7 +188,7 @@ export default function InvestorsPage() {
 							viewport={{ once: true }}
 						>
 							<h2 className="text-3xl md:text-4xl text-white font-bold mb-6">
-								Paleogenesis
+								ORNITHO
 							</h2>
 							<p className="text-xl text-gray-300 mb-8">
 								Our flagship title combines psychological horror with multiplayer survival,
@@ -221,8 +221,8 @@ export default function InvestorsPage() {
 							className="relative aspect-video"
 						>
 							<Image
-								src="/games/paleogenesis/overview.jpg"
-								alt="Paleogenesis Game Preview"
+								src="/games/ornitho/overview.jpg"
+								alt="ORNITHO Game Preview"
 								fill
 								className="object-cover"
 							/>

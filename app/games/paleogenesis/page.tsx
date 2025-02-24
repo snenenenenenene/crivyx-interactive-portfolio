@@ -43,29 +43,29 @@ const locations = [
 	{
 		title: "Central Station",
 		description: "Once a bustling transport hub, now a deadly maze where ancient predators stalk their prey through abandoned platforms and dark tunnels.",
-		image: "/games/paleogenesis/central-station.webp"
+		image: "/games/ornitho/central-station.webp"
 	},
 	{
 		title: "Cathedral",
 		description: "Gothic architecture meets prehistoric terror. Navigate through shadow-filled naves and climb treacherous spires to escape the hunters below.",
-		image: "/games/paleogenesis/cathedral.webp"
+		image: "/games/ornitho/cathedral.webp"
 	},
 	{
 		title: "Port of Antwerp",
 		description: "Shipping containers create a labyrinth of steel where raptors coordinate their attacks. Use the environment to your advantage or become prey.",
-		image: "/games/paleogenesis/central-station.webp" // Replace with actual port image
+		image: "/games/ornitho/central-station.webp" // Replace with actual port image
 	}
 ];
 
-export default function PaleogenesisPage() {
+export default function OrnithoPage() {
 	return (
 		<div className="min-h-screen bg-black">
 			{/* Hero Section */}
 			<section className="relative h-screen">
 				<div className="absolute inset-0">
 					<Image
-						src="/games/paleogenesis/central-station.webp"
-						alt="Paleogenesis - Central Station"
+						src="/games/ornitho/central-station.webp"
+						alt="ORNITHO - Central Station"
 						fill
 						className="object-cover"
 						priority
@@ -83,7 +83,7 @@ export default function PaleogenesisPage() {
 							className="max-w-3xl pt-20"
 						>
 							<h1 className="text-7xl md:text-8xl font-display tracking-tight text-white font-black mb-8">
-								Paleogenesis
+								ORNITHO
 							</h1>
 							<p className="text-xl text-gray-300 mb-10 leading-relaxed">
 								A psychological horror survival experience where prehistoric predators
@@ -129,7 +129,7 @@ export default function PaleogenesisPage() {
 								Terror Evolved
 							</h2>
 							<p className="text-xl text-gray-300 mb-8 leading-relaxed">
-								In Paleogenesis, prehistoric nightmares become reality as scientifically
+								In ORNITHO, prehistoric nightmares become reality as scientifically
 								accurate dinosaurs hunt through meticulously recreated modern environments.
 								Every shadow could hide death, every sound could mean survival or doom.
 							</p>
@@ -155,8 +155,8 @@ export default function PaleogenesisPage() {
 							className="relative aspect-video"
 						>
 							<Image
-								src="/games/paleogenesis/overview.jpg"
-								alt="Paleogenesis Game Overview"
+								src="/games/ornitho/overview.jpg"
+								alt="ORNITHO Game Overview"
 								fill
 								className="object-cover"
 							/>

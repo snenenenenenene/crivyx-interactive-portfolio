@@ -36,8 +36,8 @@ export default function HomePage() {
       <section className="relative h-screen">
         <div className="absolute inset-0">
           <Image
-            src="/games/paleogenesis/central-station.webp"
-            alt="Paleogenesis - Central Station"
+            src="/games/ornitho/central-station.webp"
+            alt="ORNITHO - Central Station"
             fill
             className="object-cover"
             priority
@@ -55,7 +55,7 @@ export default function HomePage() {
               className="max-w-3xl pt-20"
             >
               <h1 className="text-7xl md:text-8xl lg:text-9xl font-display tracking-tight text-white font-black mb-8">
-                PALEOGENESIS
+                ORNITHO
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
                 A psychological horror survival experience where prehistoric predators
@@ -63,7 +63,7 @@ export default function HomePage() {
               </p>
               <motion.a
                 // href="https://store.steampowered.com"
-                href='/games/paleogenesis'
+                href='/games/ornitho'
                 // target="_blank"
                 // rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-white text-black 
@@ -120,12 +120,12 @@ export default function HomePage() {
             {[
               {
                 title: "Central Station",
-                image: "/games/paleogenesis/central-station.webp",
+                image: "/games/ornitho/central-station.webp",
                 description: "Experience Antwerp's iconic transport hub transformed into a deadly maze."
               },
               {
                 title: "Cathedral",
-                image: "/games/paleogenesis/cathedral.webp",
+                image: "/games/ornitho/cathedral.webp",
                 description: "Gothic architecture meets prehistoric terror in this haunting landmark."
               }
             ].map((location, index) => (

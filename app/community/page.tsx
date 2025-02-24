@@ -15,7 +15,7 @@ const communityPlatforms = [
 	},
 	{
 		title: "Reddit",
-		description: "Participate in game discussions, share theories, and stay updated on r/Paleogenesis.",
+		description: "Participate in game discussions, share theories, and stay updated on r/ORNITHO.",
 		icon: <Users className="w-6 h-6" />,
 		buttonText: "Join Subreddit",
 		url: process.env.NEXT_PUBLIC_REDDIT_URL,

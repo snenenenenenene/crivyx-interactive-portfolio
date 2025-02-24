@@ -8,14 +8,14 @@ import Link from 'next/link';
 const newsItems = [
 	{
 		date: "March 2024",
-		title: "Paleogenesis Development Update",
+		title: "ORNITHO Development Update",
 		excerpt: "Exploring the innovative AI system that makes our dinosaurs truly terrifying.",
-		link: "/news/paleogenesis-development-update"
+		link: "/news/ornitho-development-update"
 	},
 	{
 		date: "February 2024",
 		title: "Join Us at UNWRAP 2024",
-		excerpt: "Meet the team and get a first look at Paleogenesis at UNWRAP 2024.",
+		excerpt: "Meet the team and get a first look at ORNITHO at UNWRAP 2024.",
 		link: "/news/unwrap-2024"
 	},
 	{
