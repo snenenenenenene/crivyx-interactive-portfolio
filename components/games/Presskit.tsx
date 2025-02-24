@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const pressKitResources = {
 	factSheet: {
-		developer: "Crivyx Interactive",
+		developer: "Cretaceous Couch",
 		location: "Antwerp, Belgium",
 		founding: "2025",
 		website: "https://www.crivyx.com",

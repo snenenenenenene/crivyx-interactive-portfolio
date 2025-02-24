@@ -62,14 +62,14 @@ export default function Footer() {
 							<Link href="/" className="block">
 								<Image
 									src="/vulture.png"
-									alt="Crivyx Interactive Logo"
+									alt="Cretaceous Couch Logo"
 									width={48}
 									height={48}
 									className="w-12 h-12"
 								/>
 							</Link>
 							<div className="text-brutal-gray-400 font-mono">
-								<p>© {new Date().getFullYear()} Crivyx Interactive.</p>
+								<p>© {new Date().getFullYear()} Cretaceous Couch.</p>
 								<p className="text-sm">All rights reserved.</p>
 							</div>
 						</div>

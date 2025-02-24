@@ -6,8 +6,8 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: "Crivyx Interactive - Indie Horror Game Studio",
-    template: "%s | Crivyx Interactive"
+    default: "Cretaceous Couch - Indie Horror Game Studio",
+    template: "%s | Cretaceous Couch"
   },
   description: "We develop psychological horror games that challenge conventional gameplay mechanics and industry standards.",
 };

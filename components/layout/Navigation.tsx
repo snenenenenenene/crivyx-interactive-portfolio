@@ -56,7 +56,7 @@ export default function Navigation() {
 							>
 								<Image
 									src="/vulture.png"
-									alt="Crivyx Interactive Logo"
+									alt="Cretaceous Couch Logo"
 									width={100}
 									height={100}
 									priority
@@ -144,7 +144,7 @@ export default function Navigation() {
 								{/* Social Links or Additional Content can go here */}
 								<div className="mt-12 pt-12 border-t border-white/10">
 									<p className="text-sm text-gray-400">
-										© 2024 Crivyx Interactive
+										© 2024 Cretaceous Couch
 									</p>
 								</div>
 							</div>

@@ -2,7 +2,7 @@
 
 export const config = {
   company: {
-    name: "Crivyx Interactive",
+    name: "Cretaceous Couch",
     foundedYear: 2025,
     location: "Antwerp, Belgium",
     mission:
@@ -59,13 +59,13 @@ export const config = {
         },
       },
       {
-        name: "Melina Osuna",
+        name: "Philip Milanov",
         role: "Lead Animator",
-        image: "/team/melina.jpg",
+        image: "/team/philip.jpg",
         bio: "Animation expert specializing in creating fluid, lifelike character movements.",
         socials: {
-          linkedin: "https://linkedin.com/in/melina-osuna",
-          artstation: "https://artstation.com/melinaosuna",
+          linkedin: "https://www.linkedin.com/in/philip-milanov",
+          artstation: "https://www.artstation.com/philip_milanov",
         },
       },
     ],
@@ -176,7 +176,7 @@ export const config = {
   },
 
   site: {
-    name: "Crivyx Interactive",
+    name: "Cretaceous Couch",
     description:
       "We develop psychological horror games that challenge conventional gameplay mechanics and industry standards.",
     url: "https://www.crivyx.com",
